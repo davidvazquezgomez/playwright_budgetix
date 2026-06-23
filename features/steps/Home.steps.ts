@@ -1,0 +1,32 @@
+
+import { createBdd } from 'playwright-bdd';
+import { test } from './fixtures';
+
+const { Given, When, Then } = createBdd(test);
+
+Given('que el usuario está en la home', async ({ page, homePage }) => {
+  await page.goto('/index.php');
+  await homePage.aceptarCookiesSiAparece();
+});
+
+When('hace click en el menú hamburguesa', async ({ homePage }) => {
+  await homePage.abrirMenu();
+});
+
+Then('debería ver el botón {string}', async ({ homePage }, textoBoton: string) => {
+  await homePage.esVisibleBoton(textoBoton);
+});
+
+When('hace click en {string}', async ({ homePage }, textoBoton: string) => {
+  await homePage.clickBoton(textoBoton);
+});
+
+Then('debería navegar a la página de login', async ({ homePage }) => {
+  await homePage.validarRedireccionLogin();
+});
+
+
+
+
+
+

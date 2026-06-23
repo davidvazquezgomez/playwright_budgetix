@@ -1,0 +1,377 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - heading "🍪 Este sitio utiliza cookies" [level=3] [ref=e5]
+      - paragraph [ref=e6]:
+        - text: Utilizamos cookies propias necesarias para el funcionamiento del sitio web y cookies funcionales para mejorar tu experiencia. Puedes aceptar todas las cookies, rechazarlas o personalizar tus preferencias.
+        - link "Más información" [ref=e7] [cursor=pointer]:
+          - /url: landing/politica-cookies.html
+    - generic [ref=e8]:
+      - button "Aceptar todas" [ref=e9] [cursor=pointer]
+      - button "Solo necesarias" [ref=e10] [cursor=pointer]
+      - button "Configurar" [ref=e11] [cursor=pointer]
+  - navigation [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - img "Budgetix" [ref=e15]
+        - generic [ref=e16]: Budgetix
+      - list [ref=e17]:
+        - listitem [ref=e18]:
+          - link "Funcionalidades" [ref=e19] [cursor=pointer]:
+            - /url: "#features"
+        - listitem [ref=e20]:
+          - link "Capturas" [ref=e21] [cursor=pointer]:
+            - /url: "#screenshots"
+        - listitem [ref=e22]:
+          - link "Análisis IA" [ref=e23] [cursor=pointer]:
+            - /url: "#analisis-ia"
+        - listitem [ref=e24]:
+          - link "Retos y Metas" [ref=e25] [cursor=pointer]:
+            - /url: "#retos"
+        - listitem [ref=e26]:
+          - link "Beneficios" [ref=e27] [cursor=pointer]:
+            - /url: "#benefits"
+        - listitem [ref=e28]:
+          - link "FAQ" [ref=e29] [cursor=pointer]:
+            - /url: landing/faq.html
+        - listitem [ref=e30]:
+          - link "Contacto" [ref=e31] [cursor=pointer]:
+            - /url: "#contact"
+        - listitem [ref=e32]:
+          - link "Acceder a la App" [ref=e33] [cursor=pointer]:
+            - /url: app/public/login.php
+  - generic [ref=e35]:
+    - generic [ref=e36]:
+      - heading "Gestiona tus Finanzas Personales de Forma Inteligente" [level=1] [ref=e37]
+      - paragraph [ref=e38]: Budgetix te ayuda a conocer tus gastos, planificar tu futuro financiero y alcanzar tus metas económicas con herramientas potentes y fáciles de usar.
+      - generic [ref=e39]:
+        - text: 🤖
+        - strong [ref=e40]: "Con IA integrada:"
+        - text: Predicciones inteligentes de gastos y recomendaciones personalizadas
+      - generic [ref=e41]:
+        - link "Comenzar Gratis" [ref=e42] [cursor=pointer]:
+          - /url: app/public/register.php
+        - link "Iniciar Sesión" [ref=e43] [cursor=pointer]:
+          - /url: app/public/login.php
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - generic [ref=e46]: "10"
+          - generic [ref=e47]: Funcionalidades
+        - generic [ref=e48]:
+          - generic [ref=e49]: IA
+          - generic [ref=e50]: Integrada
+        - generic [ref=e51]:
+          - generic [ref=e52]: 24/7
+          - generic [ref=e53]: Acceso
+    - img "Budgetix Dashboard" [ref=e57]
+  - generic [ref=e59]:
+    - generic [ref=e60]:
+      - heading "Funcionalidades Principales" [level=2] [ref=e61]
+      - paragraph [ref=e62]: Todo lo que necesitas para gestionar tus finanzas en un solo lugar
+    - generic [ref=e63]:
+      - generic [ref=e64]:
+        - generic [ref=e65]: 📊
+        - heading "Resumen Anual" [level=3] [ref=e66]
+        - paragraph [ref=e67]: Visualiza tus ingresos y gastos anuales con gráficos interactivos y detallados. Analiza tu comportamiento financiero mes a mes.
+      - generic [ref=e68]:
+        - generic [ref=e69]: 💳
+        - heading "Gestión de Gastos" [level=3] [ref=e70]
+        - paragraph [ref=e71]: Añade y categoriza tus gastos e ingresos fácilmente. Mantén un registro completo de todas tus transacciones.
+      - generic [ref=e72]:
+        - generic [ref=e73]: 📈
+        - heading "Estadísticas Avanzadas" [level=3] [ref=e74]
+        - paragraph [ref=e75]: Gráficos y métricas detalladas para entender mejor tus patrones de gasto y optimizar tu presupuesto.
+      - generic [ref=e76]:
+        - generic [ref=e77]: 💰
+        - heading "Calculadora de Salario" [level=3] [ref=e78]
+        - paragraph [ref=e79]: Calcula tu salario neto, impuestos y deducciones. Comprende exactamente cuánto ganas después de impuestos.
+      - generic [ref=e80]:
+        - generic [ref=e81]: 👥
+        - heading "Gastos Compartidos" [level=3] [ref=e82]
+        - paragraph [ref=e83]: Gestiona gastos compartidos con amigos, familia o compañeros. Divide facturas y lleva un control de quién debe qué.
+      - generic [ref=e84]:
+        - generic [ref=e85]: 🔔
+        - heading "Recordatorios" [level=3] [ref=e86]
+        - paragraph [ref=e87]: Configura recordatorios para pagos recurrentes, facturas y otras obligaciones financieras importantes.
+      - generic [ref=e88]:
+        - generic [ref=e89]: 🚗
+        - heading "Control de Revisiones" [level=3] [ref=e90]
+        - paragraph [ref=e91]: Lleva un registro de las revisiones y mantenimiento de tus vehículos, con alertas automáticas.
+      - generic [ref=e92]:
+        - generic [ref=e93]: 📝
+        - heading "Informes Detallados" [level=3] [ref=e94]
+        - paragraph [ref=e95]: Genera informes anuales completos con análisis de tu situación financiera y proyecciones futuras.
+      - generic [ref=e96]:
+        - generic [ref=e97]: �
+        - heading "Análisis Predictivo IA" [level=3] [ref=e98]
+        - paragraph [ref=e99]: Inteligencia artificial avanzada que calcula tu Score de Salud Financiera, predice gastos futuros, detecta patrones y genera consejos personalizados automáticamente.
+      - generic [ref=e100]:
+        - generic [ref=e101]: 🏷️
+        - heading "Categorías Personalizadas" [level=3] [ref=e102]
+        - paragraph [ref=e103]: Crea, edita y organiza tus propias categorías y subcategorías. Adapta completamente el sistema a tu forma de gestionar las finanzas.
+      - generic [ref=e104]:
+        - generic [ref=e105]: 🎯
+        - heading "Retos y Metas" [level=3] [ref=e106]
+        - paragraph [ref=e107]: Establece objetivos financieros, crea retos de ahorro personalizados y alcanza tus metas económicas con seguimiento visual de tu progreso.
+      - generic [ref=e108]:
+        - generic [ref=e109]: 🌐
+        - heading "Acceso Offline" [level=3] [ref=e110]
+        - paragraph [ref=e111]: Trabaja sin conexión gracias a nuestra PWA. Tus datos se sincronizarán cuando vuelvas a estar online.
+  - generic [ref=e113]:
+    - generic [ref=e114]:
+      - heading "Interfaz Intuitiva y Moderna" [level=2] [ref=e115]
+      - paragraph [ref=e116]: Diseñada para que gestionar tus finanzas sea fácil y agradable
+    - generic [ref=e117]:
+      - generic [ref=e118]:
+        - img "Estadísticas" [ref=e119]
+        - heading "Estadísticas Detalladas" [level=4] [ref=e120]
+        - paragraph [ref=e121]: Gráficos interactivos para analizar tus datos
+      - generic [ref=e122]:
+        - img "Gastos" [ref=e123]
+        - heading "Gestión de Gastos" [level=4] [ref=e124]
+        - paragraph [ref=e125]: Añade y categoriza tus transacciones
+  - generic [ref=e127]:
+    - generic [ref=e128]:
+      - heading "🧠 Análisis Inteligente con IA" [level=2] [ref=e129]
+      - paragraph [ref=e130]: Inteligencia Artificial que entiende tus finanzas y te ayuda a mejorar
+    - generic [ref=e131]:
+      - generic [ref=e132]:
+        - generic [ref=e133]:
+          - generic [ref=e134]: 💯
+          - heading "Score de Salud Financiera" [level=3] [ref=e135]
+          - paragraph [ref=e136]: "Un puntaje de 0 a 100 que evalúa tu situación financiera basándose en 5 componentes: tasa de ahorro, balance positivo, tendencia de gastos, diversificación y constancia."
+        - generic [ref=e137]:
+          - generic [ref=e138]: 📈
+          - heading "Predicción de Gastos" [level=3] [ref=e139]
+          - paragraph [ref=e140]: El sistema analiza tu historial y predice cuánto gastarás este mes. Te alerta si vas por encima de lo habitual para que puedas tomar acción a tiempo.
+        - generic [ref=e141]:
+          - generic [ref=e142]: 🔍
+          - heading "Detección de Patrones" [level=3] [ref=e143]
+          - paragraph [ref=e144]: "Descubre automáticamente patrones en tu comportamiento: qué día gastas más, qué categoría domina, si gastas más en quincena... y mucho más."
+        - generic [ref=e145]:
+          - generic [ref=e146]: 💡
+          - heading "Consejos Personalizados" [level=3] [ref=e147]
+          - paragraph [ref=e148]: "Recibe recomendaciones únicas basadas en tus datos reales: desde alertas de anomalías hasta sugerencias para alcanzar tus metas más rápido."
+        - generic [ref=e149]:
+          - generic [ref=e150]: 📊
+          - heading "Comparativas Inteligentes" [level=3] [ref=e151]
+          - paragraph [ref=e152]: Compara tu rendimiento con el mismo mes del año anterior. Mide tu progreso real y celebra tus mejoras mes a mes.
+        - generic [ref=e153]:
+          - generic [ref=e154]: 🎯
+          - heading "Proyección de Metas" [level=3] [ref=e155]
+          - paragraph [ref=e156]: Si tienes metas de ahorro, la IA calcula si vas a cumplirlas a tiempo y te dice exactamente cuánto necesitas ahorrar cada mes.
+      - generic [ref=e157]:
+        - generic [ref=e158]:
+          - generic [ref=e159]:
+            - generic [ref=e160]: "78"
+            - generic [ref=e161]: / 100
+          - paragraph [ref=e162]: Buena Salud Financiera
+        - generic [ref=e163]:
+          - generic [ref=e164]: 📉 Tus gastos bajaron un 15% respecto al mes pasado
+          - generic [ref=e165]: 🎯 Vas en camino de cumplir tu meta "Vacaciones"
+          - generic [ref=e166]: ⚠️ Gastos en "Ocio" aumentaron un 30%
+    - generic [ref=e167]:
+      - paragraph [ref=e168]: Descubre qué dice la IA sobre tus finanzas
+      - link "Probar Análisis Inteligente" [ref=e169] [cursor=pointer]:
+        - /url: app/public/register.php
+  - generic [ref=e171]:
+    - generic [ref=e172]:
+      - heading "🏷️ Categorías 100% Personalizables" [level=2] [ref=e173]
+      - paragraph [ref=e174]: Tu sistema de clasificación, a tu manera
+    - generic [ref=e175]:
+      - generic [ref=e176]:
+        - generic [ref=e177]:
+          - heading "✏️ Crea las Tuyas" [level=3] [ref=e178]
+          - paragraph [ref=e179]: Añade categorías y subcategorías personalizadas con nombres, iconos y colores que tú elijas. Organiza tus finanzas como tiene sentido para ti.
+        - generic [ref=e180]:
+          - heading "🔄 Reordena y Prioriza" [level=3] [ref=e181]
+          - paragraph [ref=e182]: Arrastra y suelta para ordenar. Marca tus favoritas y oculta las que no uses. El sistema se adapta a tus necesidades.
+        - generic [ref=e183]:
+          - heading "🎨 Personaliza Colores e Iconos" [level=3] [ref=e184]
+          - paragraph [ref=e185]: Más de 50 iconos disponibles y paleta de colores completa. Identifica cada categoría al instante con un vistazo.
+        - generic [ref=e186]:
+          - heading "📱 Sincronización Total" [level=3] [ref=e187]
+          - paragraph [ref=e188]: "Tus categorías personalizadas funcionan en toda la aplicación: gastos, estadísticas, informes y más."
+      - generic [ref=e189]:
+        - heading "Ejemplos de categorías que puedes crear:" [level=4] [ref=e190]
+        - generic [ref=e191]:
+          - generic [ref=e192]: 🐾 Mascotas
+          - generic [ref=e193]: 🎮 Gaming
+          - generic [ref=e194]: ☁️ Suscripciones
+          - generic [ref=e195]: 🌱 Inversiones
+          - generic [ref=e196]: 🏋️ Gimnasio
+          - generic [ref=e197]: ☕ Cafeterías
+          - generic [ref=e198]: 🎁 Regalos
+          - generic [ref=e199]: 🏥 Salud
+  - generic [ref=e201]:
+    - generic [ref=e202]:
+      - heading "🎯 Alcanza tus Metas Financieras" [level=2] [ref=e203]
+      - paragraph [ref=e204]: Establece objetivos, crea retos personalizados y transforma tus sueños en realidad
+    - generic [ref=e205]:
+      - generic [ref=e206]:
+        - generic [ref=e207]:
+          - generic [ref=e208]: 💎
+          - heading "Metas Personalizadas" [level=3] [ref=e209]
+          - paragraph [ref=e210]: Define objetivos de ahorro con nombre, cantidad objetivo, icono y color personalizados. Ya sea un viaje, un coche nuevo o tu fondo de emergencia.
+        - generic [ref=e211]:
+          - generic [ref=e212]: 📊
+          - heading "Seguimiento Visual" [level=3] [ref=e213]
+          - paragraph [ref=e214]: Visualiza tu progreso con barras de avance en tiempo real. Sabrás exactamente cuánto has ahorrado y cuánto te falta para alcanzar tu objetivo.
+        - generic [ref=e215]:
+          - generic [ref=e216]: 💰
+          - heading "Aportaciones Flexibles" [level=3] [ref=e217]
+          - paragraph [ref=e218]: Añade ahorros cuando quieras y registra cada aportación. Budgetix calculará automáticamente tu progreso y te motivará a seguir adelante.
+        - generic [ref=e219]:
+          - generic [ref=e220]: 🏆
+          - heading "Estados Inteligentes" [level=3] [ref=e221]
+          - paragraph [ref=e222]: "Organiza tus metas por estado: activas, completadas o archivadas. Celebra tus logros y mantén el enfoque en lo que importa ahora."
+        - generic [ref=e223]:
+          - generic [ref=e224]: 📅
+          - heading "Historial Completo" [level=3] [ref=e225]
+          - paragraph [ref=e226]: Revisa todas tus aportaciones pasadas con fechas, montos y notas. Analiza tu disciplina de ahorro y aprende de tu comportamiento financiero.
+        - generic [ref=e227]:
+          - generic [ref=e228]: 🎨
+          - heading "Personalización Total" [level=3] [ref=e229]
+          - paragraph [ref=e230]: Elige entre 56 iconos y 12 colores para que cada meta refleje tu personalidad. Desde una casa 🏠 hasta unas vacaciones ✈️, tú decides.
+      - generic [ref=e231]:
+        - heading "Ejemplos de Metas que Puedes Crear" [level=3] [ref=e232]
+        - generic [ref=e233]:
+          - generic [ref=e234] [cursor=pointer]:
+            - generic [ref=e235]: 🏠
+            - generic [ref=e236]: Fondo para casa
+          - generic [ref=e237] [cursor=pointer]:
+            - generic [ref=e238]: ✈️
+            - generic [ref=e239]: Viaje soñado
+          - generic [ref=e240] [cursor=pointer]:
+            - generic [ref=e241]: 🚗
+            - generic [ref=e242]: Coche nuevo
+          - generic [ref=e243] [cursor=pointer]:
+            - generic [ref=e244]: 💍
+            - generic [ref=e245]: Boda perfecta
+          - generic [ref=e246] [cursor=pointer]:
+            - generic [ref=e247]: 🎓
+            - generic [ref=e248]: Estudios
+          - generic [ref=e249] [cursor=pointer]:
+            - generic [ref=e250]: 🏖️
+            - generic [ref=e251]: Vacaciones
+          - generic [ref=e252] [cursor=pointer]:
+            - generic [ref=e253]: 💼
+            - generic [ref=e254]: Negocio propio
+          - generic [ref=e255] [cursor=pointer]:
+            - generic [ref=e256]: 🚲
+            - generic [ref=e257]: Nueva bici
+    - generic [ref=e258]:
+      - paragraph [ref=e259]: ¿Listo para empezar a ahorrar con propósito?
+      - link "Comienza Gratis Ahora" [ref=e260] [cursor=pointer]:
+        - /url: app/public/register.php
+  - generic [ref=e262]:
+    - generic [ref=e263]:
+      - heading "¿Por Qué Elegir Budgetix?" [level=2] [ref=e264]
+      - paragraph [ref=e265]: La solución completa para tu salud financiera
+    - generic [ref=e266]:
+      - generic [ref=e267]:
+        - generic [ref=e268]: 🔒
+        - heading "Seguro y Privado" [level=3] [ref=e269]
+        - paragraph [ref=e270]: Tus datos están encriptados y solo tú tienes acceso a ellos. Cumplimos con todas las normativas de protección de datos.
+      - generic [ref=e271]:
+        - generic [ref=e272]: 📱
+        - heading "Multiplataforma" [level=3] [ref=e273]
+        - paragraph [ref=e274]: "Accede desde cualquier dispositivo: ordenador, tablet o móvil. Tu información sincronizada en todos lados."
+      - generic [ref=e275]:
+        - generic [ref=e276]: ⚡
+        - heading "Rápido y Eficiente" [level=3] [ref=e277]
+        - paragraph [ref=e278]: Interfaz optimizada para una experiencia fluida. Añade transacciones en segundos y visualiza datos al instante.
+      - generic [ref=e279]:
+        - generic [ref=e280]: 🎨
+        - heading "Personalizable" [level=3] [ref=e281]
+        - paragraph [ref=e282]: Adapta categorías, colores y vistas a tu gusto. Crea tu experiencia financiera personalizada.
+      - generic [ref=e283]:
+        - generic [ref=e284]: 💡
+        - heading "Intuitivo" [level=3] [ref=e285]
+        - paragraph [ref=e286]: No necesitas ser experto en finanzas. Nuestra interfaz es clara y fácil de usar desde el primer día.
+      - generic [ref=e287]:
+        - generic [ref=e288]: 🤖
+        - heading "Inteligencia Artificial" [level=3] [ref=e289]
+        - paragraph [ref=e290]: IA avanzada que predice tus gastos futuros, identifica patrones de ahorro y te ofrece recomendaciones personalizadas para optimizar tus finanzas.
+  - generic [ref=e293]:
+    - heading "Comienza a Gestionar tus Finanzas Hoy" [level=2] [ref=e294]
+    - paragraph [ref=e295]: Únete a Budgetix y toma el control de tu futuro financiero. Registrarte es gratis y solo toma un minuto.
+    - generic [ref=e296]:
+      - link "Registrarse Gratis" [ref=e297] [cursor=pointer]:
+        - /url: app/public/register.php
+      - link "Ya tengo cuenta" [ref=e298] [cursor=pointer]:
+        - /url: app/public/login.php
+  - contentinfo [ref=e299]:
+    - generic [ref=e300]:
+      - generic [ref=e301]:
+        - generic [ref=e302]:
+          - generic [ref=e303]:
+            - img "Budgetix" [ref=e304]
+            - generic [ref=e305]: Budgetix
+          - paragraph [ref=e306]: Tu compañero inteligente para la gestión financiera personal.
+        - generic [ref=e307]:
+          - heading "Enlaces Rápidos" [level=4] [ref=e308]
+          - list [ref=e309]:
+            - listitem [ref=e310]:
+              - link "Funcionalidades" [ref=e311] [cursor=pointer]:
+                - /url: "#features"
+            - listitem [ref=e312]:
+              - link "Capturas" [ref=e313] [cursor=pointer]:
+                - /url: "#screenshots"
+            - listitem [ref=e314]:
+              - link "Beneficios" [ref=e315] [cursor=pointer]:
+                - /url: "#benefits"
+            - listitem [ref=e316]:
+              - link "Registrarse" [ref=e317] [cursor=pointer]:
+                - /url: app/public/register.php
+        - generic [ref=e318]:
+          - heading "Aplicación" [level=4] [ref=e319]
+          - list [ref=e320]:
+            - listitem [ref=e321]:
+              - link "Iniciar Sesión" [ref=e322] [cursor=pointer]:
+                - /url: app/public/login.php
+            - listitem [ref=e323]:
+              - link "Crear Cuenta" [ref=e324] [cursor=pointer]:
+                - /url: app/public/register.php
+            - listitem [ref=e325]:
+              - link "Recuperar Contraseña" [ref=e326] [cursor=pointer]:
+                - /url: app/public/recuperar_password.php
+        - generic [ref=e327]:
+          - heading "Contacto" [level=4] [ref=e328]
+          - paragraph [ref=e329]: ¿Tienes preguntas o sugerencias?
+          - paragraph [ref=e330]: 📧 info@budgetix.es
+        - generic [ref=e331]:
+          - heading "Legal" [level=4] [ref=e332]
+          - list [ref=e333]:
+            - listitem [ref=e334]:
+              - link "Aviso Legal" [ref=e335] [cursor=pointer]:
+                - /url: landing/aviso-legal.html
+            - listitem [ref=e336]:
+              - link "Política de Privacidad" [ref=e337] [cursor=pointer]:
+                - /url: landing/politica-privacidad.html
+            - listitem [ref=e338]:
+              - link "Política de Cookies" [ref=e339] [cursor=pointer]:
+                - /url: landing/politica-cookies.html
+            - listitem [ref=e340]:
+              - link "Términos y Condiciones" [ref=e341] [cursor=pointer]:
+                - /url: landing/terminos-condiciones.html
+            - listitem [ref=e342]:
+              - link "Preguntas Frecuentes" [ref=e343] [cursor=pointer]:
+                - /url: landing/faq.html
+      - generic [ref=e344]:
+        - paragraph [ref=e345]: © 2026 Budgetix. Todos los derechos reservados.
+        - paragraph [ref=e346]:
+          - link "Aviso Legal" [ref=e347] [cursor=pointer]:
+            - /url: landing/aviso-legal.html
+          - text: "|"
+          - link "Privacidad" [ref=e348] [cursor=pointer]:
+            - /url: landing/politica-privacidad.html
+          - text: "|"
+          - link "Cookies" [ref=e349] [cursor=pointer]:
+            - /url: landing/politica-cookies.html
+          - text: "|"
+          - link "Términos" [ref=e350] [cursor=pointer]:
+            - /url: landing/terminos-condiciones.html
+          - text: "|"
+          - link "FAQ" [ref=e351] [cursor=pointer]:
+            - /url: landing/faq.html

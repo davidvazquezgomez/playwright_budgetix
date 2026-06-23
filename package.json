@@ -1,0 +1,31 @@
+{
+  "name": "budgetix-playwright-tests",
+  "version": "1.0.0",
+  "description": "Playwright E2E tests for Budgetix using POM + BDD",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx bddgen && npx playwright test",
+    "test:headed": "npx bddgen && npx playwright test --headed",
+    "test:ui": "npx bddgen && npx playwright test --ui",
+    "bddgen": "npx bddgen",
+    "allure:generate": "npx allure generate allure-results -o allure-report --clean",
+    "allure:open": "npx allure open allure-report",
+    "allure:report": "npm run test && npm run allure:generate && npm run allure:open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.61.0",
+    "@types/node": "^25.6.0",
+    "allure-commandline": "^2.40.0",
+    "allure-playwright": "^3.8.0",
+    "playwright-bdd": "^9.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
+}
