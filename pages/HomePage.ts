@@ -43,8 +43,12 @@ export class HomePage {
   async clickBoton(texto: string) {   
     await this.abrirMenu();
 
-    const boton = this.page.getByText(texto); //metodo reutilizable para hacer click en un boton con el texto especificado en el menu
-    await boton.waitFor({ state: 'visible' }); 
+    const map: Record<string, Locator> = {
+      'Acceder a la app': this.botonAccederApp,
+    };
+
+    const boton = map[texto] ?? this.page.getByText(texto);
+    await boton.waitFor({ state: 'visible' });
     await boton.click();
   }
 
