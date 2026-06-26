@@ -1,4 +1,5 @@
 import { Page, Locator, expect } from '@playwright/test';
+import { LOGIN_PATH } from './urls';
 
 export class LoginPage {
   readonly page: Page;
@@ -21,7 +22,7 @@ export class LoginPage {
     this.logoutButton = page.locator('#logout');
   }
 
-  async goto() { await this.page.goto('/app/public/login.php'); }
+  async goto() { await this.page.goto(LOGIN_PATH); }
   async fillUsername(u: string) { await this.inputUsuario.fill(u); }
   async fillPassword(p: string) { await this.inputPassword.fill(p); }
   async clearFields() { await this.inputUsuario.fill(''); await this.inputPassword.fill(''); }

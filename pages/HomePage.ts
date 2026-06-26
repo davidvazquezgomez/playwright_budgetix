@@ -1,4 +1,5 @@
 import { Page, expect, Locator } from '@playwright/test';
+import { LOGIN_PATH } from './urls';
 
 export class HomePage {
   readonly page: Page;
@@ -53,6 +54,6 @@ export class HomePage {
   }
 
   async validarRedireccionLogin() {
-    await this.page.waitForURL('https://www.budgetix.es/app/public/login.php');
+    await this.page.waitForURL(LOGIN_PATH);
   }
 }

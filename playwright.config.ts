@@ -1,6 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 import { defineBddConfig } from 'playwright-bdd';
 import 'dotenv/config';
+import { BASE_URL } from './pages/urls';
 
 export default defineConfig({
   testDir: defineBddConfig({
@@ -13,7 +14,7 @@ export default defineConfig({
   ],
   use: {
     headless: false,
-    baseURL: 'https://www.budgetix.es',
+    baseURL: BASE_URL,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     trace: 'retain-on-failure',
