@@ -3,31 +3,31 @@ import { LOGIN_PATH } from './urls';
 
 export class LoginPage {
   readonly page: Page;
+  lastPopup?: Page;
   readonly inputUsuario: Locator;
   readonly inputPassword: Locator;
   readonly botonLogin: Locator;
-  readonly rememberMe: Locator;
-  readonly forgotPasswordLink: Locator;
- readonly errorMessage: Locator;
- readonly logoutButton: Locator;
+  readonly botonContinuarGoogle: Locator;
 
   constructor(page: Page) {
     this.page = page;
-    this.inputUsuario = page.locator('#username');    
+    this.inputUsuario = page.locator('#username');
     this.inputPassword = page.locator('#password');
     this.botonLogin = page.locator('#iniciar-sesion');
-    this.rememberMe = page.locator('#remember-me');
-    this.forgotPasswordLink = page.locator('#olvidaste-tu-contrasena');
-   this.errorMessage = page.locator('.alert-danger');
-    this.logoutButton = page.locator('#logout');
+    this.botonContinuarGoogle = page.locator('#continuar-con-google');
   }
 
-  async goto() { await this.page.goto(LOGIN_PATH); }
-  async fillUsername(u: string) { await this.inputUsuario.fill(u); }
-  async fillPassword(p: string) { await this.inputPassword.fill(p); }
-  async clearFields() { await this.inputUsuario.fill(''); await this.inputPassword.fill(''); }
-  async clickLogin() { await this.botonLogin.click(); }
-  async login(u: string, p: string) { await this.fillUsername(u); await this.fillPassword(p); await this.clickLogin(); }
+  async goto() {
+    await this.page.goto(LOGIN_PATH);
+  }
+
+  async fillUsername(u: string) {
+    await this.inputUsuario.fill(u);
+  }
+
+  async fillPassword(p: string) {
+    await this.inputPassword.fill(p);
+  }
 
   // Click a button by its logical name. The mapping keeps selectors inside the page object
   async clickButton(name: string) {
@@ -40,17 +40,23 @@ export class LoginPage {
     await locator.click();
   }
 
-  async toggleRememberMe(flag: boolean) {
-    const checked = await this.rememberMe.isChecked().catch(() => false);
-    if (checked !== flag) await this.rememberMe.click();
+  async expectLoggedIn() {
+    await expect(this.page).toHaveURL(/\/app\//);
   }
 
-  async clickForgotPassword() { await this.forgotPasswordLink.click(); }
-  async expectErrorMessage(text: string) { await expect(this.errorMessage).toBeVisible(); await expect(this.errorMessage).toContainText(text); }
-  async expectRequiredFieldValidation() { /* adaptar a validaciones reales */ }
-  async expectLoggedIn() { await expect(this.page).toHaveURL(/\/app\//); }
-  async expectStillAuthenticated() { await this.expectLoggedIn(); }
-  async expectOnForgotPassword() { await expect(this.page).toHaveURL(/forgot-password|recover/); }
-  async logout() { await this.logoutButton.click(); }
-  async expectOnLogin() { await expect(this.page).toHaveURL(/login/); }
+  async clickContinuarGoogle() {
+    await this.botonContinuarGoogle.waitFor({ state: 'visible', timeout: 5000 }).catch(() => null);
+    await this.botonContinuarGoogle.click();
+  }
+
+  // Click the Google button and return the popup Page so tests can operate on it.
+  async clickContinuarGoogleAndWaitForPopup() {
+    const [popup] = await Promise.all([
+      this.page.waitForEvent('popup'),
+      this.botonContinuarGoogle.click(),
+    ]);
+    await popup.waitForLoadState('load');
+    this.lastPopup = popup;
+    return popup;
+  }
 }

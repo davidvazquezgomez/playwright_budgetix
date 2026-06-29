@@ -7,6 +7,7 @@ export class HomePage {
   readonly botonAccederApp: Locator;
   readonly cookieBanner: Locator;
   readonly botonAceptarCookies: Locator;
+  readonly botonContinuarGoogle: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -15,6 +16,7 @@ export class HomePage {
     this.botonAccederApp = page.locator('#acceder-a-la-app');
     this.cookieBanner = page.locator('#cookie-consent-banner');
     this.botonAceptarCookies = page.locator('#cookie-accept-all');
+    this.botonContinuarGoogle = page.locator('#continuar-con-google');
   }
 
   async aceptarCookiesSiAparece(): Promise<void> {

@@ -16,3 +16,7 @@ Feature: Login de usuario
     | username           | password      |
     | ENV_USER           | ENV_PASS      |
 
+  Scenario: Login con Google
+    When hace click en "Continuar con Google"
+    And selecciona una cuenta válida
+    Then debería acceder a la aplicación

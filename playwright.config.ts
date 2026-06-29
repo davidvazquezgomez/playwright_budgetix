@@ -27,17 +27,18 @@ export default defineConfig({
     },
   },
   projects: [
-    {      
+    {
       name: 'Android',
-        use: {
-          viewport: { width: 412, height: 915 },
-          isMobile: true,
-          hasTouch: true,
-          deviceScaleFactor: 2.625,
-          userAgent:
-            'Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36',
-        },
+      use: {
+        viewport: { width: 412, height: 915 },
+        isMobile: true,
+        hasTouch: true,
+        deviceScaleFactor: 3, 
+        userAgent:
+          'Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36',
+      },
     },
+
     {
       name: 'iPhone',
         use: {    
