@@ -1,5 +1,5 @@
 import { Page, expect, Locator } from '@playwright/test';
-import { LOGIN_PATH } from './urls';
+import { LOGIN_URL } from './urls';
 
 export class HomePage {
   readonly page: Page;
@@ -56,6 +56,6 @@ export class HomePage {
   }
 
   async validarRedireccionLogin() {
-    await this.page.waitForURL(LOGIN_PATH);
+    await this.page.waitForURL(LOGIN_URL);
   }
 }

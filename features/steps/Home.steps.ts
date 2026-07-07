@@ -1,12 +1,12 @@
 
 import { createBdd } from 'playwright-bdd';
 import { test } from './fixtures';
-import { INDEX_PATH } from '../../pages/urls';
+import { INDEX_URL } from '../../pages/urls';
 
 const { Given, When, Then } = createBdd(test);
 
 Given('que el usuario está en la home', async ({ page, homePage }) => {
-  await page.goto(INDEX_PATH);
+  await page.goto(INDEX_URL);
   await homePage.aceptarCookiesSiAparece();
 });
 
