@@ -7,6 +7,7 @@
     "test": "npx bddgen && npx playwright test",
     "test:headed": "npx bddgen && npx playwright test --headed",
     "test:ui": "npx bddgen && npx playwright test --ui",
+    "test:mobile": "npx bddgen && npx playwright test --project=Android --project=iPhone",
     "bddgen": "npx bddgen",
     "allure:generate": "npx allure generate allure-results -o allure-report --clean",
     "allure:open": "npx allure open allure-report",

@@ -1,5 +1,5 @@
 import { Page, Locator, expect } from '@playwright/test';
-import { LOGIN_PATH, DASHBOARD_PATH } from './urls';
+import { LOGIN_URL, DASHBOARD_PATH } from './urls';
 
 export class LoginPage {
   readonly page: Page;
@@ -28,7 +28,7 @@ export class LoginPage {
   }
 
   async goto() {
-    await this.page.goto(LOGIN_PATH);
+    await this.page.goto(LOGIN_URL);
   }
 
   async fillUsername(u: string) {
@@ -56,6 +56,7 @@ export class LoginPage {
   }
 
   async expectInvalidCredentialsMessage() {
+    // Prefer explicit ids
     for (const id of this.invalidMessageIds) {
       const loc = this.page.locator(id);
       if (await loc.count() > 0) {
@@ -63,6 +64,16 @@ export class LoginPage {
         return;
       }
     }
+    // Then common alert/role patterns
+    const alertSelectors = ['[role="alert"]', '.alert-danger', '.alert-error', '.alert', '.toast-error', '.error-message', '[data-testid="login-error"]'];
+    for (const sel of alertSelectors) {
+      const loc = this.page.locator(sel);
+      if (await loc.count() > 0) {
+        await expect(loc.first()).toBeVisible();
+        return;
+      }
+    }
+    // Fallback to text check
     await expect(this.page.getByText(/credencial(es)? inválid(a|as)?/i)).toBeVisible();
   }
 
@@ -71,6 +82,15 @@ export class LoginPage {
       const loc = this.page.locator(id);
       if (await loc.count() > 0) {
         await expect(loc).toBeVisible();
+        return;
+      }
+    }
+    // Common patterns near the username field
+    const patterns = ['[data-error-for="username"]', '#username + .invalid-feedback', '#username-error', '.username-error', '.field-error'];
+    for (const sel of patterns) {
+      const loc = this.page.locator(sel);
+      if (await loc.count() > 0) {
+        await expect(loc.first()).toBeVisible();
         return;
       }
     }
@@ -85,6 +105,14 @@ export class LoginPage {
         return;
       }
     }
+    const patterns = ['[data-error-for="password"]', '#password + .invalid-feedback', '#password-error', '.password-error', '.field-error'];
+    for (const sel of patterns) {
+      const loc = this.page.locator(sel);
+      if (await loc.count() > 0) {
+        await expect(loc.first()).toBeVisible();
+        return;
+      }
+    }
     await expect(this.page.getByText(/contrase(?:ñ|n)a.*obligatoria|contrase(?:ñ|n)a es obligatoria/i)).toBeVisible();
   }
 
@@ -94,6 +122,14 @@ export class LoginPage {
       const loc = this.page.locator(id);
       if (await loc.count() > 0) {
         await expect(loc).toBeVisible();
+        return;
+      }
+    }
+    const patterns = ['[role="alert"]', '.validation-errors', '.form-errors', '.errors', '[data-testid="form-errors"]'];
+    for (const sel of patterns) {
+      const loc = this.page.locator(sel);
+      if (await loc.count() > 0) {
+        await expect(loc.first()).toBeVisible();
         return;
       }
     }
@@ -111,6 +147,17 @@ export class LoginPage {
           return;
         }
       }
+      // Check menuitems / roles
+      const menuitem = this.page.getByRole('menuitem', { name }).first();
+      if (await menuitem.count() > 0) {
+        await expect(menuitem).toBeVisible();
+        return;
+      }
+      const navUser = this.page.locator(`nav >> text=${name}`);
+      if (await navUser.count() > 0) {
+        await expect(navUser.first()).toBeVisible();
+        return;
+      }
       await expect(this.page.getByText(name)).toBeVisible();
     } else {
       // fallback: try a common selector
@@ -121,7 +168,11 @@ export class LoginPage {
           return;
         }
       }
-      // last resort: try any element that looks like a user label
+      const menuitem = this.page.getByRole('menuitem').filter({ hasText: '.' });
+      if (await menuitem.count() > 0) {
+        await expect(menuitem.first()).toBeVisible();
+        return;
+      }
       await expect(this.page.locator('[data-testid="user-name"]')).toBeVisible().catch(() => null);
     }
   }

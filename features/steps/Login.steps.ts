@@ -25,8 +25,18 @@ When('hace click en el botón {string}', async ({ loginPage }, boton: string) =>
   await loginPage.clickButton(boton);
 });
 
-Then('debería acceder a la aplicación', async ({ loginPage }) => {
+Then('debería acceder a la aplicación', async ({ loginPage, homePage, page }) => {
   await loginPage.expectLoggedIn();
+  await homePage.handleNotificationsPrompt(true).catch(() => null);
+  try {
+    const found = await page.locator('button:has-text("Activar"), text=Activar').evaluateAll((nodes: HTMLElement[]) =>
+      nodes.map(n => ({ id: n.id, class: n.className, dataset: Object.assign({}, (n as any).dataset), outer: n.outerHTML.slice(0,300) }))
+    );
+    // eslint-disable-next-line no-console
+    console.log('diag-activar-elements', JSON.stringify(found));
+  } catch (e) {
+    // ignore
+  }
 });
 
 // Additional steps for validation and session scenarios
@@ -79,8 +89,9 @@ Then('debería visualizar los errores de validación', async ({ loginPage }) => 
   await loginPage.expectValidationErrors();
 });
 
-Then('debería visualizar el dashboard', async ({ loginPage }) => {
+Then('debería visualizar el dashboard', async ({ loginPage, homePage, page }) => {
   await loginPage.expectLoggedIn();
+  await homePage.handleNotificationsPrompt(true).catch(() => null);
 });
 
 Then('debería visualizar su nombre de usuario', async ({ loginPage }) => {
@@ -92,13 +103,14 @@ Then('debería ser redirigido al dashboard', async ({ loginPage }) => {
   await loginPage.expectLoggedIn();
 });
 
-When('inicia sesión con credenciales válidas', async ({ loginPage }) => {
+When('inicia sesión con credenciales válidas', async ({ loginPage, homePage, page }) => {
   const user = process.env.USER_NAME || '';
   const pass = process.env.USER_PASSWORD || '';
   await loginPage.fillUsername(user);
   await loginPage.fillPassword(pass);
   await loginPage.clickButton('Iniciar sesión');
   await loginPage.expectLoggedIn();
+  await homePage.handleNotificationsPrompt(true).catch(() => null);
 });
 
 Then('debería acceder directamente al dashboard', async ({ page }) => {
@@ -111,7 +123,7 @@ Then('debería ser redirigido al login', async ({ page }) => {
   await page.waitForURL(LOGIN_URL);
 });
 
-Given('que el usuario ha iniciado sesión', async ({ loginPage }) => {
+Given('que el usuario ha iniciado sesión', async ({ loginPage, homePage }) => {
   await loginPage.goto();
   const user = process.env.USER_NAME || '';
   const pass = process.env.USER_PASSWORD || '';
@@ -119,9 +131,10 @@ Given('que el usuario ha iniciado sesión', async ({ loginPage }) => {
   await loginPage.fillPassword(pass);
   await loginPage.clickButton('Iniciar sesión');
   await loginPage.expectLoggedIn();
+  await homePage.handleNotificationsPrompt(true).catch(() => null);
 });
 
-Given('que el usuario ya tiene sesión iniciada', async ({ loginPage }) => {
+Given('que el usuario ya tiene sesión iniciada', async ({ loginPage, homePage }) => {
   // reuse the login flow to create a session for the current context
   const user = process.env.USER_NAME || '';
   const pass = process.env.USER_PASSWORD || '';
@@ -130,6 +143,7 @@ Given('que el usuario ya tiene sesión iniciada', async ({ loginPage }) => {
   await loginPage.fillPassword(pass);
   await loginPage.clickButton('Iniciar sesión');
   await loginPage.expectLoggedIn();
+  await homePage.handleNotificationsPrompt(true).catch(() => null);
 });
 
 When('accede a la aplicación', async ({ page }) => {
