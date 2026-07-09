@@ -17,7 +17,16 @@ Feature: Login de usuario
     | username           | password      |
     | ENV_USER           | ENV_PASS      |
 
+ Scenario: Login con contraseña incorrecta
+    When introduce un nombre de usuario válido
+    And introduce una contraseña inválida
+    And hace click en el botón "Iniciar sesión"
+    Then debería visualizar un mensaje de credenciales inválidas
 
+  Scenario: Login con credenciales inválidas
+    When introduce credenciales inválidas
+    And hace click en el botón "Iniciar sesión"
+    Then debería visualizar un mensaje de credenciales inválidas
 
  
 

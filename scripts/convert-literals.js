@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
+// load .env if present
+try { require('dotenv').config(); } catch (e) { /* dotenv optional */ }
 // Roles we want to convert into constants
 const ROLE_NAMES = ['button', 'link', 'menuitem', 'menu', 'textbox', 'dialog'];
 
@@ -57,7 +59,22 @@ function walkDir(dir, filelist = []) {
   return filelist;
 }
 
+function checkCredentialsIfDebug() {
+  const requireFlag = process.argv.includes('--require-credentials');
+  if (process.env.PWDEBUG || requireFlag) {
+    const missing = [];
+    if (!process.env.USER_NAME) missing.push('USER_NAME');
+    if (!process.env.USER_PASSWORD) missing.push('USER_PASSWORD');
+    if (missing.length > 0) {
+      console.error('Missing environment variables required for debug:', missing.join(', '));
+      console.error('Create a .env file or set the variables in your environment. Aborting.');
+      process.exit(2);
+    }
+  }
+}
+
 function main() {
+  checkCredentialsIfDebug();
   const target = process.argv[2] || 'features';
   const start = path.resolve(process.cwd(), target);
   if (!fs.existsSync(start)) {

@@ -18,6 +18,21 @@ When('introduce una contraseña válida {string}', async ({ loginPage }, passwor
   await loginPage.fillPassword(pass);
 });
 
+// Variant without parameter: use env var
+When('introduce un nombre de usuario válido', async ({ loginPage }) => {
+  const user = process.env.USER_NAME || '';
+  await loginPage.fillUsername(user);
+});
+
+When('introduce una contraseña inválida', async ({ loginPage }) => {
+  const pass = process.env.INVALID_PASS || 'wrong-password';
+  await loginPage.fillPassword(pass);
+});
+
+When('introduce credenciales inválidas', async ({ loginPage }) => {
+  await loginPage.fillInvalidCredentials();
+});
+
 When('hace click en el botón {string}', async ({ loginPage }, boton: string) => {
   const selector = boton.startsWith('#') ? boton : `#${boton}`;
   const locator = loginPage.page.locator(selector);
@@ -40,8 +55,14 @@ When('hace click en el botón {string}', async ({ loginPage }, boton: string) =>
 
 Then('debería ser redirigido al dashboard', async ({ loginPage }) => {
   await loginPage.expectLoggedIn();
+  await loginPage.handlePostLoginPopups();
 });
 
 Then('debería visualizar su nombre de usuario', async ({ loginPage }) => {
+  await loginPage.handlePostLoginPopups();
   await loginPage.expectUsernameVisible();
+});
+
+Then('debería visualizar un mensaje de credenciales inválidas', async ({ loginPage }) => {
+  await loginPage.expectInvalidCredentialsMessage();
 });
