@@ -3,28 +3,15 @@ import { LOGIN_URL, DASHBOARD_PATH } from './urls';
 
 export class LoginPage {
   readonly page: Page;
-  lastPopup?: Page;
   readonly inputUsuario: Locator;
   readonly inputPassword: Locator;
   readonly botonLogin: Locator;
-  readonly botonContinuarGoogle: Locator;
-  readonly invalidMessageIds: string[];
-  readonly usernameErrorIds: string[];
-  readonly passwordErrorIds: string[];
-  readonly validationErrorIds: string[];
-  readonly usernameDisplayIds: string[];
 
   constructor(page: Page) {
     this.page = page;
     this.inputUsuario = page.locator('#username');
     this.inputPassword = page.locator('#password');
     this.botonLogin = page.locator('#iniciar-sesion');
-    this.botonContinuarGoogle = page.locator('#continuar-con-google');
-    this.invalidMessageIds = ['#login-error', '#error-message', '#loginMessage', '#mensaje-error', '#mensaje-login', '#alert-login'];
-    this.usernameErrorIds = ['#username-error', '#usuario-error', '#error-username'];
-    this.passwordErrorIds = ['#password-error', '#contrasena-error', '#error-password'];
-    this.validationErrorIds = ['#form-errors', '#validation-errors', '#errors'];
-    this.usernameDisplayIds = ['#user-name', '#profile-name', '#username-display', '#nav-username', '#user', '#userDisplay'];
   }
 
   async goto() {
@@ -39,157 +26,21 @@ export class LoginPage {
     await this.inputPassword.fill(p);
   }
 
-  // Click a button by its logical name. The mapping keeps selectors inside the page object
-  async clickButton(name: string) {
-    const map: Record<string, Locator> = {
-      'Iniciar sesión': this.botonLogin,
-    };
-
-    const locator = map[name] ?? this.page.getByText(name);
+  async clickButton(locator: Locator) {
     await locator.waitFor({ state: 'visible', timeout: 5000 }).catch(() => null);
     await locator.click();
   }
 
   async expectLoggedIn() {
-    // Accept any URL under the dashboard path (e.g. /app/pages/resumenAnual.php)
     await expect(this.page).toHaveURL(new RegExp(DASHBOARD_PATH));
-  }
-
-  async expectInvalidCredentialsMessage() {
-    // Prefer explicit ids
-    for (const id of this.invalidMessageIds) {
-      const loc = this.page.locator(id);
-      if (await loc.count() > 0) {
-        await expect(loc).toBeVisible();
-        return;
-      }
-    }
-    // Then common alert/role patterns
-    const alertSelectors = ['[role="alert"]', '.alert-danger', '.alert-error', '.alert', '.toast-error', '.error-message', '[data-testid="login-error"]'];
-    for (const sel of alertSelectors) {
-      const loc = this.page.locator(sel);
-      if (await loc.count() > 0) {
-        await expect(loc.first()).toBeVisible();
-        return;
-      }
-    }
-    // Fallback to text check
-    await expect(this.page.getByText(/credencial(es)? inválid(a|as)?/i)).toBeVisible();
-  }
-
-  async expectUsernameRequired() {
-    for (const id of this.usernameErrorIds) {
-      const loc = this.page.locator(id);
-      if (await loc.count() > 0) {
-        await expect(loc).toBeVisible();
-        return;
-      }
-    }
-    // Common patterns near the username field
-    const patterns = ['[data-error-for="username"]', '#username + .invalid-feedback', '#username-error', '.username-error', '.field-error'];
-    for (const sel of patterns) {
-      const loc = this.page.locator(sel);
-      if (await loc.count() > 0) {
-        await expect(loc.first()).toBeVisible();
-        return;
-      }
-    }
-    await expect(this.page.getByText(/usuario.*obligatorio|usuario es obligatorio/i)).toBeVisible();
-  }
-
-  async expectPasswordRequired() {
-    for (const id of this.passwordErrorIds) {
-      const loc = this.page.locator(id);
-      if (await loc.count() > 0) {
-        await expect(loc).toBeVisible();
-        return;
-      }
-    }
-    const patterns = ['[data-error-for="password"]', '#password + .invalid-feedback', '#password-error', '.password-error', '.field-error'];
-    for (const sel of patterns) {
-      const loc = this.page.locator(sel);
-      if (await loc.count() > 0) {
-        await expect(loc.first()).toBeVisible();
-        return;
-      }
-    }
-    await expect(this.page.getByText(/contrase(?:ñ|n)a.*obligatoria|contrase(?:ñ|n)a es obligatoria/i)).toBeVisible();
-  }
-
-  async expectValidationErrors() {
-    // generic check for validation errors/messages
-    for (const id of this.validationErrorIds) {
-      const loc = this.page.locator(id);
-      if (await loc.count() > 0) {
-        await expect(loc).toBeVisible();
-        return;
-      }
-    }
-    const patterns = ['[role="alert"]', '.validation-errors', '.form-errors', '.errors', '[data-testid="form-errors"]'];
-    for (const sel of patterns) {
-      const loc = this.page.locator(sel);
-      if (await loc.count() > 0) {
-        await expect(loc.first()).toBeVisible();
-        return;
-      }
-    }
-    await expect(this.page.getByText(/obligatorio|error de validaci/i)).toBeVisible();
   }
 
   async expectUsernameVisible() {
     const name = process.env.USER_NAME || process.env.USER || '';
     if (name) {
-      // Prefer id-based selectors commonly used in header/profile
-      for (const id of this.usernameDisplayIds) {
-        const loc = this.page.locator(id);
-        if (await loc.count() > 0) {
-          await expect(loc).toBeVisible();
-          return;
-        }
-      }
-      // Check menuitems / roles
-      const menuitem = this.page.getByRole('menuitem', { name }).first();
-      if (await menuitem.count() > 0) {
-        await expect(menuitem).toBeVisible();
-        return;
-      }
-      const navUser = this.page.locator(`nav >> text=${name}`);
-      if (await navUser.count() > 0) {
-        await expect(navUser.first()).toBeVisible();
-        return;
-      }
       await expect(this.page.getByText(name)).toBeVisible();
     } else {
-      // fallback: try a common selector
-      for (const id of this.usernameDisplayIds) {
-        const loc = this.page.locator(id);
-        if (await loc.count() > 0) {
-          await expect(loc).toBeVisible();
-          return;
-        }
-      }
-      const menuitem = this.page.getByRole('menuitem').filter({ hasText: '.' });
-      if (await menuitem.count() > 0) {
-        await expect(menuitem.first()).toBeVisible();
-        return;
-      }
-      await expect(this.page.locator('[data-testid="user-name"]')).toBeVisible().catch(() => null);
+      await expect(this.page.locator('#user-name')).toBeVisible().catch(() => null);
     }
-  }
-
-  async clickContinuarGoogle() {
-    await this.botonContinuarGoogle.waitFor({ state: 'visible', timeout: 5000 }).catch(() => null);
-    await this.botonContinuarGoogle.click();
-  }
-
-  // Click the Google button and return the popup Page so tests can operate on it.
-  async clickContinuarGoogleAndWaitForPopup() {
-    const [popup] = await Promise.all([
-      this.page.waitForEvent('popup'),
-      this.botonContinuarGoogle.click(),
-    ]);
-    await popup.waitForLoadState('load');
-    this.lastPopup = popup;
-    return popup;
   }
 }

@@ -22,6 +22,11 @@ Normas fijas (siempre recordar):
 
 - Reglas operativas:
   - Priorizar selectores por `id` en POMs.
+  - Priorizar selectores por `id` en POMs.
+  - Prohibido usar selectores que no sean `id` en los `Locator` de las Pages: no usar `getByText`, selectores por texto, `hasText`, `getByRole` con `name` (basados en texto), ni selectores CSS/atributos distintos a `#id` para localizar controles en flujos críticos.
+  - Si una UI no expone `id` para un elemento necesario, el agente debe INFORMAR al equipo y NO intentar usar selectores alternativos por su cuenta; proponer soluciones (añadir ids, data-testids, o acordar un fallback) y esperar instrucciones.
+  - Trabajamos con `TypeScript` — generar y modificar código respetando tipos y firmas existentes.
+  - Regla de POM: todos los `Locator` deben estar definidos dentro del `constructor` de la clase Page y asignados a propiedades `readonly`.
   - Usar constantes `*_URL`/`*_PATH` de `pages/urls.ts` para comprobaciones de URL.
   - Proponer parches pequeños y reproducibles con comandos de ejecución.
 
