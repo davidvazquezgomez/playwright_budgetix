@@ -12,6 +12,8 @@
     "allure:generate": "npx allure generate allure-results -o allure-report --clean",
     "allure:open": "npx allure open allure-report",
     "allure:report": "npm run test && npm run allure:generate && npm run allure:open"
+    ,"explainer:junior": "node .github/agents/explainer-junior/run.js"
+    ,"explainer:junior:cli": "node .github/agents/explainer-junior/cli.js"
   },
   "keywords": [],
   "author": "",
