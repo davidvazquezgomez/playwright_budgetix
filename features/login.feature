@@ -28,6 +28,28 @@ Feature: Login de usuario
     And hace click en el botón "Iniciar sesión"
     Then debería visualizar un mensaje de credenciales inválidas
 
+  Scenario: Login con campo usuario vacío
+    When introduce un nombre de usuario vacío
+    And introduce una contraseña válida
+    And hace click en el botón "Iniciar sesión"
+    Then debería visualizar un mensaje de Completa este campo
+
+  Scenario: Login con campo contraseña vacío
+    When introduce un nombre de usuario válido
+    And introduce una contraseña vacía
+    And hace click en el botón "Iniciar sesión"
+    Then debería visualizar un mensaje de Completa este campo
+
+  Scenario: Login con campos vacíos
+    When introduce un nombre de usuario vacío
+    And introduce una contraseña vacía
+    And hace click en el botón "Iniciar sesión"
+    Then debería visualizar mensajes de Completa este campo
+
+
+ 
+
+
  
 
 

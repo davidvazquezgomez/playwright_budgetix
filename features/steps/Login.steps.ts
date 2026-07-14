@@ -1,8 +1,9 @@
 import { createBdd } from 'playwright-bdd';
 import { test } from './fixtures';
+import { expect, Locator } from '@playwright/test';
 
 const { Given, When, Then } = createBdd(test);
-const ROLE_BUTTON = 'button';
+
 
 Given('que el usuario está en la página de login', async ({ loginPage }) => {
   await loginPage.goto();
@@ -15,6 +16,12 @@ When('introduce un nombre de usuario válido {string}', async ({ loginPage }, us
 
 When('introduce una contraseña válida {string}', async ({ loginPage }, password: string) => {
   const pass = password === 'ENV_PASS' ? (process.env.USER_PASSWORD || '') : password;
+  await loginPage.fillPassword(pass);
+});
+
+// Variant without parameter: use env var
+When('introduce una contraseña válida', async ({ loginPage }) => {
+  const pass = process.env.USER_PASSWORD || '';
   await loginPage.fillPassword(pass);
 });
 
@@ -33,24 +40,12 @@ When('introduce credenciales inválidas', async ({ loginPage }) => {
   await loginPage.fillInvalidCredentials();
 });
 
-When('hace click en el botón {string}', async ({ loginPage }, boton: string) => {
-  const selector = boton.startsWith('#') ? boton : `#${boton}`;
-  const locator = loginPage.page.locator(selector);
-  if (await locator.count() > 0) {
-    await loginPage.clickButton(locator);
-    return;
-  }
-  const roleBtn = loginPage.page.getByRole(ROLE_BUTTON, { name: boton });
-  if (await roleBtn.count() > 0) {
-    await loginPage.clickButton(roleBtn.first());
-    return;
-  }
-  const textLoc = loginPage.page.getByText(boton);
-  if (await textLoc.count() > 0) {
-    await loginPage.clickButton(textLoc.first());
-    return;
-  }
-  throw new Error(`No button found for id ${selector} or text "${boton}"`);
+When('introduce un nombre de usuario vacío', async ({ loginPage }) => {
+  await loginPage.fillUsername('');
+});
+
+When('introduce una contraseña vacía', async ({ loginPage }) => {
+  await loginPage.fillPassword('');
 });
 
 Then('debería ser redirigido al dashboard', async ({ loginPage }) => {
@@ -66,3 +61,28 @@ Then('debería visualizar su nombre de usuario', async ({ loginPage }) => {
 Then('debería visualizar un mensaje de credenciales inválidas', async ({ loginPage }) => {
   await loginPage.expectInvalidCredentialsMessage();
 });
+
+
+Then('debería visualizar un mensaje de Completa este campo', async ({ loginPage }) => {
+  // Check native validationMessage on inputs (expects browser/app to set it after click)
+  const userMsg = await loginPage.inputUsuario.evaluate(el => (el as HTMLInputElement).validationMessage);
+  const passMsg = await loginPage.inputPassword.evaluate(el => (el as HTMLInputElement).validationMessage);
+  //console.log('[DEBUG] validationMessage username ->', userMsg);
+  //console.log('[DEBUG] validationMessage password ->', passMsg);
+  if (userMsg && userMsg.trim().includes('Completa este campo')) return;
+  if (passMsg && passMsg.trim().includes('Completa este campo')) return;
+
+  throw new Error('No se encontró mensaje nativo de validación "Completa este campo" en username ni password');
+});
+
+Then('debería visualizar mensajes de Completa este campo', async ({ loginPage }) => {
+  // Require native validationMessage for both username and password
+  const userMsg = await loginPage.inputUsuario.evaluate(el => (el as HTMLInputElement).validationMessage);
+  const passMsg = await loginPage.inputPassword.evaluate(el => (el as HTMLInputElement).validationMessage);
+  //console.log('[DEBUG] validationMessage username ->', userMsg);
+  //console.log('[DEBUG] validationMessage password ->', passMsg);
+  if (userMsg && userMsg.trim().includes('Completa este campo') && passMsg && passMsg.trim().includes('Completa este campo')) return;
+  throw new Error('No se encontraron mensajes nativos de validación "Completa este campo" para ambos campos');
+});
+
+
