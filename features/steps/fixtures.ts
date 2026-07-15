@@ -22,6 +22,25 @@ export const test = base.extend<MyFixtures>({
   },
 
   loginPage: async ({ page }, use) => {
+    // Attach debug listeners to capture console messages, page errors, failed requests and close events
+    page.on('console', msg => {
+      try {
+        const args = msg.args().map(a => a.toString()).join(' ');
+        console.log('[PAGE][console]', msg.type(), args);
+      } catch (e) {
+        console.log('[PAGE][console] (could not stringify) ', msg.type());
+      }
+    });
+    page.on('pageerror', err => {
+      console.error('[PAGE][pageerror]', err && (err.stack || err.message || String(err)));
+    });
+    page.on('requestfailed', req => {
+      console.error('[PAGE][requestfailed]', req.url(), req.failure()?.errorText || req.failure());
+    });
+    page.on('close', () => {
+      console.error('[PAGE][close] page was closed');
+    });
+
     await use(new LoginPage(page));
   },
 });
