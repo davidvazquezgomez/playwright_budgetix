@@ -54,11 +54,46 @@ export class HomePage extends BasePage {
   async clickContinuarConGoogle() {
     try {
       const ctx = this.page.context();
+
+      // Diagnostic: log existing pages and attach handlers to observe popup/navigation/close
+      try {
+        console.log('[DEBUG] Pre-click pages:', ctx.pages().map(p => p.url()));
+      } catch (e) {
+        // ignore
+      }
+      ctx.on('page', p => {
+        console.log('[DEBUG] Context new page event:', p.url());
+        p.on('close', () => console.log('[DEBUG] Popup closed:', p.url()));
+      });
+      this.page.on('close', () => console.log('[DEBUG] Main page closed:', this.page.url()));
+
       const popupPromise = ctx.waitForEvent('page');
+      const navigationPromise = this.page.waitForNavigation({ waitUntil: 'domcontentloaded', timeout: 10000 }).catch(() => null);
+
       await this.botonContinuarGoogle.first().click().catch(() => null);
-      const popup = await popupPromise;
-      await popup.waitForLoadState('domcontentloaded', { timeout: 10000 }).catch(() => null);
-      return popup;
+
+      // Wait for either a new page (popup) or a navigation in the same page
+      let winner: any = null;
+      try {
+        winner = await Promise.race([popupPromise, navigationPromise]);
+      } catch (e) {
+        // ignore race failures
+      }
+
+      // If winner looks like a Page (popup), return it
+      if (winner && typeof (winner as any).url === 'function') {
+        const popup = winner as any;
+        console.log('[DEBUG] Click resulted in popup with URL:', popup.url());
+        await popup.waitForLoadState('domcontentloaded', { timeout: 10000 }).catch(() => null);
+        try { await popup.screenshot({ path: 'tmp/google-popup-after-click.png' }).catch(() => null); } catch(e){}
+        return popup;
+      }
+
+      // Otherwise assume navigation happened in the same page and return current page
+      await this.page.waitForLoadState('domcontentloaded', { timeout: 10000 }).catch(() => null);
+      try { await this.page.screenshot({ path: 'tmp/google-nav-after-click.png' }).catch(() => null); } catch(e){}
+      console.log('[DEBUG] Click resulted in navigation to:', this.page.url());
+      return this.page;
     } catch (e) {
       return null as any;
     }

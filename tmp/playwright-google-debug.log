@@ -1,0 +1,69 @@
+
+Running 1 test using 1 worker
+
+[DEBUG] goto: https://www.budgetix.es/app/public/login.php status 200
+[DEBUG] Pre-click pages: [ 'https://www.budgetix.es/app/public/login.php' ]
+[PAGE][console] verbose 
+[DEBUG] Click resulted in popup with URL: https://accounts.google.com/v3/signin/identifier?opparams=%253F&dsh=S-98394337%3A1784118175905666&access_type=online&client_id=124094629302-n32c27b9cdeqdjfbm8pbsj8fan270a6p.apps.googleusercontent.com&o2v=2&prompt=select_account&redirect_uri=https%3A%2F%2Fwww.budgetix.es%2Fapp%2Fpublic%2Fgoogle-callback.php&response_type=code&scope=openid+email+profile&service=lso&state=ec45d39875793c8e94c950bc4ba413be&flowName=GeneralOAuthFlow&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAMs6CexrKRK0PfcLSzgBoqfKRn2QnDHrHWg_FVTSMEQR9mdsQd4FB3kpTdhwDOCZzwNEeKxgN0Eo96QW8zoK52nMGa3DbX7AOOMj95KDmeiodEU-11RG4i0nIkgiwikygV527oxViI-C6y0P-rzHrloG9vMLnicfWaXOQA7Tv9ZxFgLHwQ6BuMGvylB-Z6VRG0RqraMNkOQSiT9dlJVUPgpNs1yGAxzOBSWGSN-DWrsEKypBRxuFjdT5M1RnJ1Hq28_6eYINQHs3A0bCxgkAe_SmHjnHwnjixcGao7a_hyim9RpC9Wk6ZPlIjRrsjSEvhOjJVS6jusQPKhFDQy0E_NA1Ol07xvJ2wPug962rCKQ5XOC8GyI0bQcmrHOUXIRq0jA87D4LuNG2IBItE6AzOYiddYUBHR9rCDw4gY8h5GTkAAJ6fztvbHCH6fpThNv55bBhKQmARqCwvPKVZOfTvMY-JcrOA%26flowName%3DGeneralOAuthFlow%26as%3DS-98394337%253A1784118175905666%26client_id%3D124094629302-n32c27b9cdeqdjfbm8pbsj8fan270a6p.apps.googleusercontent.com%26requestPath%3D%252Fsignin%252Foauth%252Fconsent%23&app_domain=https%3A%2F%2Fwww.budgetix.es&rart=ANgoxcc7tvEadI_NoJk4U-1jdniz1OvKbVdakabZHEDBv-gVmVRGpNPm_ssab37VDy7lKcECVHftRuM1AEN1VH2T5wjg_wOHtBKkmoFbHh6jyNmb5BqhC_c
+[DEBUG] clickContinuarConGoogle returned null, falling back to homePage.page
+[PAGE][console] log %c%s color: red; background: yellow; font-size: 24px; ADVERTENCIA
+[PAGE][console] log %c%s font-size: 18px; Si utilizas esta consola, otras personas podrían hacerse pasar por ti y robarte datos mediante un ataque Self-XSS.
+No escribas ni pegues ningún código que no entiendas.
+[DEBUG] GoogleOAuthPage start URL: https://accounts.google.com/v3/signin/identifier?opparams=%253F&dsh=S-98394337%3A1784118175905666&access_type=online&client_id=124094629302-n32c27b9cdeqdjfbm8pbsj8fan270a6p.apps.googleusercontent.com&o2v=2&prompt=select_account&redirect_uri=https%3A%2F%2Fwww.budgetix.es%2Fapp%2Fpublic%2Fgoogle-callback.php&response_type=code&scope=openid+email+profile&service=lso&state=ec45d39875793c8e94c950bc4ba413be&flowName=GeneralOAuthFlow&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAMs6CexrKRK0PfcLSzgBoqfKRn2QnDHrHWg_FVTSMEQR9mdsQd4FB3kpTdhwDOCZzwNEeKxgN0Eo96QW8zoK52nMGa3DbX7AOOMj95KDmeiodEU-11RG4i0nIkgiwikygV527oxViI-C6y0P-rzHrloG9vMLnicfWaXOQA7Tv9ZxFgLHwQ6BuMGvylB-Z6VRG0RqraMNkOQSiT9dlJVUPgpNs1yGAxzOBSWGSN-DWrsEKypBRxuFjdT5M1RnJ1Hq28_6eYINQHs3A0bCxgkAe_SmHjnHwnjixcGao7a_hyim9RpC9Wk6ZPlIjRrsjSEvhOjJVS6jusQPKhFDQy0E_NA1Ol07xvJ2wPug962rCKQ5XOC8GyI0bQcmrHOUXIRq0jA87D4LuNG2IBItE6AzOYiddYUBHR9rCDw4gY8h5GTkAAJ6fztvbHCH6fpThNv55bBhKQmARqCwvPKVZOfTvMY-JcrOA%26flowName%3DGeneralOAuthFlow%26as%3DS-98394337%253A1784118175905666%26client_id%3D124094629302-n32c27b9cdeqdjfbm8pbsj8fan270a6p.apps.googleusercontent.com%26requestPath%3D%252Fsignin%252Foauth%252Fconsent%23&app_domain=https%3A%2F%2Fwww.budgetix.es&rart=ANgoxcc7tvEadI_NoJk4U-1jdniz1OvKbVdakabZHEDBv-gVmVRGpNPm_ssab37VDy7lKcECVHftRuM1AEN1VH2T5wjg_wOHtBKkmoFbHh6jyNmb5BqhC_c
+[DEBUG] GoogleOAuthPage frames: [
+  'https://accounts.google.com/v3/signin/identifier?opparams=%253F&dsh=S-98394337%3A1784118175905666&access_type=online&client_id=124094629302-n32c27b9cdeqdjfbm8pbsj8fan270a6p.apps.googleusercontent.com&o2v=2&prompt=select_account&redirect_uri=https%3A%2F%2Fwww.budgetix.es%2Fapp%2Fpublic%2Fgoogle-callback.php&response_type=code&scope=openid+email+profile&service=lso&state=ec45d39875793c8e94c950bc4ba413be&flowName=GeneralOAuthFlow&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAMs6CexrKRK0PfcLSzgBoqfKRn2QnDHrHWg_FVTSMEQR9mdsQd4FB3kpTdhwDOCZzwNEeKxgN0Eo96QW8zoK52nMGa3DbX7AOOMj95KDmeiodEU-11RG4i0nIkgiwikygV527oxViI-C6y0P-rzHrloG9vMLnicfWaXOQA7Tv9ZxFgLHwQ6BuMGvylB-Z6VRG0RqraMNkOQSiT9dlJVUPgpNs1yGAxzOBSWGSN-DWrsEKypBRxuFjdT5M1RnJ1Hq28_6eYINQHs3A0bCxgkAe_SmHjnHwnjixcGao7a_hyim9RpC9Wk6ZPlIjRrsjSEvhOjJVS6jusQPKhFDQy0E_NA1Ol07xvJ2wPug962rCKQ5XOC8GyI0bQcmrHOUXIRq0jA87D4LuNG2IBItE6AzOYiddYUBHR9rCDw4gY8h5GTkAAJ6fztvbHCH6fpThNv55bBhKQmARqCwvPKVZOfTvMY-JcrOA%26flowName%3DGeneralOAuthFlow%26as%3DS-98394337%253A1784118175905666%26client_id%3D124094629302-n32c27b9cdeqdjfbm8pbsj8fan270a6p.apps.googleusercontent.com%26requestPath%3D%252Fsignin%252Foauth%252Fconsent%23&app_domain=https%3A%2F%2Fwww.budgetix.es&rart=ANgoxcc7tvEadI_NoJk4U-1jdniz1OvKbVdakabZHEDBv-gVmVRGpNPm_ssab37VDy7lKcECVHftRuM1AEN1VH2T5wjg_wOHtBKkmoFbHh6jyNmb5BqhC_c',
+  'https://accounts.youtube.com/accounts/CheckConnection?pmpo=https%3A%2F%2Faccounts.google.com&v=182683247&timestamp=1784118176735',
+  'https://accounts.google.com/_/bscframe'
+]
+[PAGE][close] page was closed
+[DEBUG] Main page closed: https://accounts.google.com/v3/signin/identifier?opparams=%253F&dsh=S-98394337%3A1784118175905666&access_type=online&client_id=124094629302-n32c27b9cdeqdjfbm8pbsj8fan270a6p.apps.googleusercontent.com&o2v=2&prompt=select_account&redirect_uri=https%3A%2F%2Fwww.budgetix.es%2Fapp%2Fpublic%2Fgoogle-callback.php&response_type=code&scope=openid+email+profile&service=lso&state=ec45d39875793c8e94c950bc4ba413be&flowName=GeneralOAuthFlow&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAMs6CexrKRK0PfcLSzgBoqfKRn2QnDHrHWg_FVTSMEQR9mdsQd4FB3kpTdhwDOCZzwNEeKxgN0Eo96QW8zoK52nMGa3DbX7AOOMj95KDmeiodEU-11RG4i0nIkgiwikygV527oxViI-C6y0P-rzHrloG9vMLnicfWaXOQA7Tv9ZxFgLHwQ6BuMGvylB-Z6VRG0RqraMNkOQSiT9dlJVUPgpNs1yGAxzOBSWGSN-DWrsEKypBRxuFjdT5M1RnJ1Hq28_6eYINQHs3A0bCxgkAe_SmHjnHwnjixcGao7a_hyim9RpC9Wk6ZPlIjRrsjSEvhOjJVS6jusQPKhFDQy0E_NA1Ol07xvJ2wPug962rCKQ5XOC8GyI0bQcmrHOUXIRq0jA87D4LuNG2IBItE6AzOYiddYUBHR9rCDw4gY8h5GTkAAJ6fztvbHCH6fpThNv55bBhKQmARqCwvPKVZOfTvMY-JcrOA%26flowName%3DGeneralOAuthFlow%26as%3DS-98394337%253A1784118175905666%26client_id%3D124094629302-n32c27b9cdeqdjfbm8pbsj8fan270a6p.apps.googleusercontent.com%26requestPath%3D%252Fsignin%252Foauth%252Fconsent%23&app_domain=https%3A%2F%2Fwww.budgetix.es&rart=ANgoxcc7tvEadI_NoJk4U-1jdniz1OvKbVdakabZHEDBv-gVmVRGpNPm_ssab37VDy7lKcECVHftRuM1AEN1VH2T5wjg_wOHtBKkmoFbHh6jyNmb5BqhC_c
+[DEBUG] GoogleOAuthPage closed, last URL: https://accounts.google.com/v3/signin/identifier?opparams=%253F&dsh=S-98394337%3A1784118175905666&access_type=online&client_id=124094629302-n32c27b9cdeqdjfbm8pbsj8fan270a6p.apps.googleusercontent.com&o2v=2&prompt=select_account&redirect_uri=https%3A%2F%2Fwww.budgetix.es%2Fapp%2Fpublic%2Fgoogle-callback.php&response_type=code&scope=openid+email+profile&service=lso&state=ec45d39875793c8e94c950bc4ba413be&flowName=GeneralOAuthFlow&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAMs6CexrKRK0PfcLSzgBoqfKRn2QnDHrHWg_FVTSMEQR9mdsQd4FB3kpTdhwDOCZzwNEeKxgN0Eo96QW8zoK52nMGa3DbX7AOOMj95KDmeiodEU-11RG4i0nIkgiwikygV527oxViI-C6y0P-rzHrloG9vMLnicfWaXOQA7Tv9ZxFgLHwQ6BuMGvylB-Z6VRG0RqraMNkOQSiT9dlJVUPgpNs1yGAxzOBSWGSN-DWrsEKypBRxuFjdT5M1RnJ1Hq28_6eYINQHs3A0bCxgkAe_SmHjnHwnjixcGao7a_hyim9RpC9Wk6ZPlIjRrsjSEvhOjJVS6jusQPKhFDQy0E_NA1Ol07xvJ2wPug962rCKQ5XOC8GyI0bQcmrHOUXIRq0jA87D4LuNG2IBItE6AzOYiddYUBHR9rCDw4gY8h5GTkAAJ6fztvbHCH6fpThNv55bBhKQmARqCwvPKVZOfTvMY-JcrOA%26flowName%3DGeneralOAuthFlow%26as%3DS-98394337%253A1784118175905666%26client_id%3D124094629302-n32c27b9cdeqdjfbm8pbsj8fan270a6p.apps.googleusercontent.com%26requestPath%3D%252Fsignin%252Foauth%252Fconsent%23&app_domain=https%3A%2F%2Fwww.budgetix.es&rart=ANgoxcc7tvEadI_NoJk4U-1jdniz1OvKbVdakabZHEDBv-gVmVRGpNPm_ssab37VDy7lKcECVHftRuM1AEN1VH2T5wjg_wOHtBKkmoFbHh6jyNmb5BqhC_c
+  ✘  1 [Desktop] › .features-gen\features\google_login.feature.spec.js:6:7 › Login con Google › Login con Google correcto (2.1m)
+
+
+  1) [Desktop] › .features-gen\features\google_login.feature.spec.js:6:7 › Login con Google › Login con Google correcto › Then debería iniciar sesión correctamente mediante Google 
+
+    Error: expect(page).toHaveURL(expected) failed
+
+    Expected pattern: /\/app\//
+    Received string:  "https://accounts.google.com/v3/signin/identifier?opparams=%253F&dsh=S-98394337%3A1784118175905666&access_type=online&client_id=124094629302-n32c27b9cdeqdjfbm8pbsj8fan270a6p.apps.googleusercontent.com&o2v=2&prompt=select_account&redirect_uri=https%3A%2F%2Fwww.budgetix.es%2Fapp%2Fpublic%2Fgoogle-callback.php&response_type=code&scope=openid+email+profile&service=lso&state=ec45d39875793c8e94c950bc4ba413be&flowName=GeneralOAuthFlow&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAMs6CexrKRK0PfcLSzgBoqfKRn2QnDHrHWg_FVTSMEQR9mdsQd4FB3kpTdhwDOCZzwNEeKxgN0Eo96QW8zoK52nMGa3DbX7AOOMj95KDmeiodEU-11RG4i0nIkgiwikygV527oxViI-C6y0P-rzHrloG9vMLnicfWaXOQA7Tv9ZxFgLHwQ6BuMGvylB-Z6VRG0RqraMNkOQSiT9dlJVUPgpNs1yGAxzOBSWGSN-DWrsEKypBRxuFjdT5M1RnJ1Hq28_6eYINQHs3A0bCxgkAe_SmHjnHwnjixcGao7a_hyim9RpC9Wk6ZPlIjRrsjSEvhOjJVS6jusQPKhFDQy0E_NA1Ol07xvJ2wPug962rCKQ5XOC8GyI0bQcmrHOUXIRq0jA87D4LuNG2IBItE6AzOYiddYUBHR9rCDw4gY8h5GTkAAJ6fztvbHCH6fpThNv55bBhKQmARqCwvPKVZOfTvMY-JcrOA%26flowName%3DGeneralOAuthFlow%26as%3DS-98394337%253A1784118175905666%26client_id%3D124094629302-n32c27b9cdeqdjfbm8pbsj8fan270a6p.apps.googleusercontent.com%26requestPath%3D%252Fsignin%252Foauth%252Fconsent%23&app_domain=https%3A%2F%2Fwww.budgetix.es&rart=ANgoxcc7tvEadI_NoJk4U-1jdniz1OvKbVdakabZHEDBv-gVmVRGpNPm_ssab37VDy7lKcECVHftRuM1AEN1VH2T5wjg_wOHtBKkmoFbHh6jyNmb5BqhC_c"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toHaveURL" with timeout 5000ms
+        14 × unexpected value "https://accounts.google.com/v3/signin/identifier?opparams=%253F&dsh=S-98394337%3A1784118175905666&access_type=online&client_id=124094629302-n32c27b9cdeqdjfbm8pbsj8fan270a6p.apps.googleusercontent.com&o2v=2&prompt=select_account&redirect_uri=https%3A%2F%2Fwww.budgetix.es%2Fapp%2Fpublic%2Fgoogle-callback.php&response_type=code&scope=openid+email+profile&service=lso&state=ec45d39875793c8e94c950bc4ba413be&flowName=GeneralOAuthFlow&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAMs6CexrKRK0PfcLSzgBoqfKRn2QnDHrHWg_FVTSMEQR9mdsQd4FB3kpTdhwDOCZzwNEeKxgN0Eo96QW8zoK52nMGa3DbX7AOOMj95KDmeiodEU-11RG4i0nIkgiwikygV527oxViI-C6y0P-rzHrloG9vMLnicfWaXOQA7Tv9ZxFgLHwQ6BuMGvylB-Z6VRG0RqraMNkOQSiT9dlJVUPgpNs1yGAxzOBSWGSN-DWrsEKypBRxuFjdT5M1RnJ1Hq28_6eYINQHs3A0bCxgkAe_SmHjnHwnjixcGao7a_hyim9RpC9Wk6ZPlIjRrsjSEvhOjJVS6jusQPKhFDQy0E_NA1Ol07xvJ2wPug962rCKQ5XOC8GyI0bQcmrHOUXIRq0jA87D4LuNG2IBItE6AzOYiddYUBHR9rCDw4gY8h5GTkAAJ6fztvbHCH6fpThNv55bBhKQmARqCwvPKVZOfTvMY-JcrOA%26flowName%3DGeneralOAuthFlow%26as%3DS-98394337%253A1784118175905666%26client_id%3D124094629302-n32c27b9cdeqdjfbm8pbsj8fan270a6p.apps.googleusercontent.com%26requestPath%3D%252Fsignin%252Foauth%252Fconsent%23&app_domain=https%3A%2F%2Fwww.budgetix.es&rart=ANgoxcc7tvEadI_NoJk4U-1jdniz1OvKbVdakabZHEDBv-gVmVRGpNPm_ssab37VDy7lKcECVHftRuM1AEN1VH2T5wjg_wOHtBKkmoFbHh6jyNmb5BqhC_c"
+
+
+       at ..\pages\LoginPage.ts:94
+
+      92 |
+      93 |   async expectLoggedIn() {
+    > 94 |     await expect(this.page).toHaveURL(new RegExp(DASHBOARD_PATH));
+         |                             ^
+      95 |   }
+      96 |
+      97 |   async expectInvalidCredentialsMessage() {    
+        at LoginPage.expectLoggedIn (C:\Repos\Budgetix\pages\LoginPage.ts:94:29)
+        at Object.<anonymous> (C:\Repos\Budgetix\features\steps\GoogleLogin.steps.ts:30:19)
+        at C:\Repos\Budgetix\node_modules\playwright-bdd\src\runtime\bddStepInvoker.ts:58:48
+        at BddStepInvoker.runWithAfterStepHooks (C:\Repos\Budgetix\node_modules\playwright-bdd\src\runtime\bddStepInvoker.ts:82:22)
+        at C:\Repos\Budgetix\node_modules\playwright-bdd\src\runtime\bddStepInvoker.ts:57:19
+        at BddStepInvoker.invoke (C:\Repos\Budgetix\node_modules\playwright-bdd\src\runtime\bddStepInvoker.ts:55:5)
+        at C:\Repos\Budgetix\.features-gen\features\google_login.feature.spec.js:9:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\features-google_login.feat-e4911-e-Login-con-Google-correcto-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\features-google_login.feat-e4911-e-Login-con-Google-correcto-Desktop\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\features-google_login.feat-e4911-e-Login-con-Google-correcto-Desktop\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\features-google_login.feat-e4911-e-Login-con-Google-correcto-Desktop\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [Desktop] › .features-gen\features\google_login.feature.spec.js:6:7 › Login con Google › Login con Google correcto 
