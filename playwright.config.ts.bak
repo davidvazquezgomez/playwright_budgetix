@@ -15,8 +15,6 @@ export default defineConfig({
   use: {
     headless: false,
     baseURL: BASE_URL,
-    // uses saved Google auth state to avoid re-login/captcha when possible
-    storageState: 'auth/google.json',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     trace: 'retain-on-failure',

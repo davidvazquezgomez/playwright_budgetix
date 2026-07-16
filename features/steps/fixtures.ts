@@ -1,6 +1,7 @@
 import { test as base } from 'playwright-bdd';
 import { HomePage } from '../../pages/HomePage';
 import { LoginPage } from '../../pages/LoginPage';
+import * as fs from 'fs';
 
 type MyFixtures = {
   homePage: HomePage;
@@ -9,10 +10,15 @@ type MyFixtures = {
 
 export const test = base.extend<MyFixtures>({
   context: async ({ browser }, use) => {
-    const context = await browser.newContext({
+    const contextOptions: any = {
       locale: 'es-ES',
       extraHTTPHeaders: { 'Accept-Language': 'es-ES,es;q=0.9' },
-    });
+    };
+    if (fs.existsSync('auth/google.json')) {
+      console.log('[INFO] Loading storageState from auth/google.json into test context');
+      contextOptions.storageState = 'auth/google.json';
+    }
+    const context = await browser.newContext(contextOptions);
     await use(context);
     await context.close();
   },

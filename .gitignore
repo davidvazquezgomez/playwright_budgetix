@@ -5,3 +5,4 @@ test-results/
 .env
 playwright-report/
 .features-gen/
+auth/google.json
